@@ -1,6 +1,6 @@
 import {useCallback, useRef, useState} from 'react';
 
-export const useAutoReadOTP = () => {
+const useAutoReadOTP = () => {
     const [otp, setOtpValue] = useState<string>('');
     const abortMethod = useRef<null | (() => void)>(null);
 
@@ -32,3 +32,5 @@ export const useAutoReadOTP = () => {
 
     return {otp, initOtpListener, abortListening};
 };
+
+export default useAutoReadOTP;
